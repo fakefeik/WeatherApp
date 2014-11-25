@@ -10,14 +10,14 @@
 
 @implementation Forecast
 
-- (id) init {
+- (id)init {
     if (self = [super init]) {
         self.times = [[NSMutableArray alloc] init];
     }
     return self;
 }
 
-- (void) dealloc {
+- (void)dealloc {
     [from release];
     [to release];
     [dawn release];
@@ -27,7 +27,7 @@
     [super dealloc];
 }
 
-- (NSString*) description {
+- (NSString *)description {
     return [NSString stringWithFormat: @"Forecast: From: %@; To: %@; Dawn: %@; Dusk: %@.",
             self.from, self.to, self.dawn, self.dusk];
 }

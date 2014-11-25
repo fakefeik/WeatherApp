@@ -10,27 +10,27 @@
 
 @interface Time : NSObject {
     @private
-    NSString* from;
-    NSString* to;
-    NSString* type;
-    NSNumber* quantity;
-    NSNumber* windDirection;
-    NSNumber* windVelocity;
-    NSNumber* temperature;
-    NSNumber* pressure;
-    NSNumber* humidity;
-    NSString* icon;
+    NSString *from;
+    NSString *to;
+    NSString *type;
+    NSNumber *quantity;
+    NSNumber *windDirection;
+    NSNumber *windVelocity;
+    NSNumber *temperature;
+    NSNumber *pressure;
+    NSNumber *humidity;
+    NSString *icon;
 }
 
-@property (retain) NSString* from;
-@property (retain) NSString* to;
-@property (copy) NSString* type;
-@property (retain) NSNumber* quantity;
-@property (retain) NSNumber* windDirection;
-@property (retain) NSNumber* windVelocity;
-@property (retain) NSNumber* temperature;
-@property (retain) NSNumber* pressure;
-@property (retain) NSNumber* humidity;
-@property (copy) NSString* icon;
+@property (retain) NSString *from;
+@property (retain) NSString *to;
+@property (copy) NSString *type;
+@property (retain) NSNumber *quantity;
+@property (retain) NSNumber *windDirection;
+@property (retain) NSNumber *windVelocity;
+@property (retain) NSNumber *temperature;
+@property (retain) NSNumber *pressure;
+@property (retain) NSNumber *humidity;
+@property (copy) NSString *icon;
 
 @end

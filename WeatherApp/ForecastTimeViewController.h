@@ -11,27 +11,27 @@
 
 @interface ForecastTimeViewController : UIViewController {
     NSUInteger ptr;
-    Weather* content;
+    Weather *content;
     
-    UIImageView* image;
-    UIButton* button;
+    UIImageView *image;
+    UIButton *button;
     
-    UILabel* country;
-    UILabel* city;
-    UILabel* latitude;
-    UILabel* longitude;
+    UILabel *country;
+    UILabel *city;
+    UILabel *latitude;
+    UILabel *longitude;
     
-    UILabel* from;
-    UILabel* to;
-    UILabel* type;
-    UILabel* windVelocity;
-    UILabel* windDirection;
-    UILabel* temperature;
-    UILabel* pressure;
-    UILabel* humidity;
+    UILabel *from;
+    UILabel *to;
+    UILabel *type;
+    UILabel *windVelocity;
+    UILabel *windDirection;
+    UILabel *temperature;
+    UILabel *pressure;
+    UILabel *humidity;
 }
 
-@property (retain) Weather* content;
+@property (retain) Weather *content;
 @property NSUInteger ptr;
 
 @end

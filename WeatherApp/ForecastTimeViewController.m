@@ -13,23 +13,23 @@
 
 @interface ForecastTimeViewController ()
 
-@property (nonatomic, retain) IBOutlet UIImageView* image;
-@property (nonatomic, retain) IBOutlet UIButton* button;
+@property (nonatomic, retain) IBOutlet UIImageView *image;
+@property (nonatomic, retain) IBOutlet UIButton *button;
 
-@property (nonatomic, retain) IBOutlet UILabel* country;
-@property (nonatomic, retain) IBOutlet UILabel* city;
-@property (nonatomic, retain) IBOutlet UILabel* latitude;
-@property (nonatomic, retain) IBOutlet UILabel* longitude;
+@property (nonatomic, retain) IBOutlet UILabel *country;
+@property (nonatomic, retain) IBOutlet UILabel *city;
+@property (nonatomic, retain) IBOutlet UILabel *latitude;
+@property (nonatomic, retain) IBOutlet UILabel *longitude;
 
 
-@property (nonatomic, retain) IBOutlet UILabel* from;
-@property (nonatomic, retain) IBOutlet UILabel* to;
-@property (nonatomic, retain) IBOutlet UILabel* type;
-@property (nonatomic, retain) IBOutlet UILabel* windVelocity;
-@property (nonatomic, retain) IBOutlet UILabel* windDirection;
-@property (nonatomic, retain) IBOutlet UILabel* temperature;
-@property (nonatomic, retain) IBOutlet UILabel* pressure;
-@property (nonatomic, retain) IBOutlet UILabel* humidity;
+@property (nonatomic, retain) IBOutlet UILabel *from;
+@property (nonatomic, retain) IBOutlet UILabel *to;
+@property (nonatomic, retain) IBOutlet UILabel *type;
+@property (nonatomic, retain) IBOutlet UILabel *windVelocity;
+@property (nonatomic, retain) IBOutlet UILabel *windDirection;
+@property (nonatomic, retain) IBOutlet UILabel *temperature;
+@property (nonatomic, retain) IBOutlet UILabel *pressure;
+@property (nonatomic, retain) IBOutlet UILabel *humidity;
 
 @end
 
@@ -47,7 +47,7 @@
         NSLog(@"No more data");
 }
 
-- (void) updateView {
+- (void)updateView {
     country.text = content.country;
     city.text = content.city;
     latitude.text = [NSString stringWithFormat:@"%@", content.latitude];
@@ -67,7 +67,6 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @synthesize content;
@@ -89,15 +88,5 @@
 @synthesize temperature;
 @synthesize pressure;
 @synthesize humidity;
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

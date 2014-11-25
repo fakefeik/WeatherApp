@@ -12,23 +12,24 @@
 
 @interface Weather : NSObject <NSXMLParserDelegate> {
     @private
-    NSString* city;
-    NSString* country;
-    NSNumber* latitude;
-    NSNumber* longitude;
-    Forecast* forecast;
+    NSString *city;
+    NSString *country;
+    NSNumber *latitude;
+    NSNumber *longitude;
+    Forecast *forecast;
 }
 
-- (void) loadFromFile:(NSString*) filename target: (id<WeatherDelegate>) target;
-- (void) loadFromNet: (NSURL*) url target: (id<WeatherDelegate>) target;
+- (void)loadFromFile:(NSString *)filename target:(id<WeatherDelegate>)target;
+- (void)loadFromNet:(NSURL *)url target:(id<WeatherDelegate>)target;
+- (void)loadFromData:(NSData *)data target:(id<WeatherDelegate>)target;
 
-@property (copy) NSString* city;
-@property (copy) NSString* country;
-@property (retain) NSNumber* latitude;
-@property (retain) NSNumber* longitude;
-@property (retain) Forecast* forecast;
+@property (copy) NSString *city;
+@property (copy) NSString *country;
+@property (retain) NSNumber *latitude;
+@property (retain) NSNumber *longitude;
+@property (retain) Forecast *forecast;
 @property (retain) id<WeatherDelegate> weatherDelegate;
-@property (copy) NSString* sunRise;
-@property (copy) NSString* sunSet;
+@property (copy) NSString *sunRise;
+@property (copy) NSString *sunSet;
 
 @end

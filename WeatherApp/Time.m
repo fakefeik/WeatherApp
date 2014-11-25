@@ -10,14 +10,14 @@
 
 @implementation Time
 
-- (id) init {
+- (id)init {
     if (self = [super init]) {
         
     }
     return self;
 }
 
-- (void) dealloc {
+- (void)dealloc {
     [self release];
     [self.from release];
     [self.to release];
@@ -30,7 +30,7 @@
     [super dealloc];
 }
 
-- (NSString*) description {
+- (NSString *)description {
     return @"Some time";
 }
 

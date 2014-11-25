@@ -9,18 +9,18 @@
 #import "Weather.h"
 
 @implementation Weather {
-    NSString* currentElement;
-    Time* tempTime;
+    NSString *currentElement;
+    Time *tempTime;
 }
 
-- (id) init {
+- (id)init {
     if (self = [super init]) {
         self.forecast = [[Forecast alloc] init];
     }
     return self;
 }
 
-- (void) dealloc {
+- (void)dealloc {
     [city release];
     [country release];
     [latitude release];
@@ -30,37 +30,45 @@
     [super dealloc];
 }
 
-- (NSString*) description {
+- (NSString *)description {
     return [NSString stringWithFormat: @"Weather: City: %@; Country: %@; Latitude: %@; Longitude: %@.",
             self.city, self.country, self.latitude, self.longitude];
 }
 
-- (void) loadFromFile:(NSString*)filename target:(id<WeatherDelegate>) target {
-    NSString* path = [[NSBundle mainBundle] pathForResource:filename ofType:@"xml"];
-    NSXMLParser* parser = [[NSXMLParser alloc] initWithData:[NSData dataWithContentsOfFile:path]];
+- (void)loadFromFile:(NSString *)filename target:(id<WeatherDelegate>)target {
+    NSString *path = [[NSBundle mainBundle] pathForResource:filename ofType:@"xml"];
+    NSXMLParser *parser = [[NSXMLParser alloc] initWithData:[NSData dataWithContentsOfFile:path]];
     self.weatherDelegate = target;
     parser.delegate = self;
     [parser parse];
     [parser release];
 }
 
-- (void) loadFromNet:(NSURL *)url target:(id<WeatherDelegate>)target {
-    NSXMLParser* parser = [[NSXMLParser alloc] initWithContentsOfURL:url];
+- (void)loadFromNet:(NSURL *)url target:(id<WeatherDelegate>)target {
+    NSXMLParser *parser = [[NSXMLParser alloc] initWithContentsOfURL:url];
     self.weatherDelegate = target;
     parser.delegate = self;
     [parser parse];
     [parser release];
 }
 
-- (void) parser:(NSXMLParser *)parser parseErrorOccurred:(NSError*)parseError {
+- (void)loadFromData:(NSData *)data target:(id<WeatherDelegate>)target {
+    NSXMLParser *parser = [[NSXMLParser alloc] initWithData:data];
+    self.weatherDelegate = target;
+    parser.delegate = self;
+    [parser parse];
+    [parser release];
+}
+
+- (void)parser:(NSXMLParser *)parser parseErrorOccurred:(NSError *)parseError {
     [self.weatherDelegate didWeatherLoadFail:parseError];
 }
 
-- (void) parserDidEndDocument:(NSXMLParser*)parser {
+- (void)parserDidEndDocument:(NSXMLParser *)parser {
     [self.weatherDelegate didWeatherLoadSucceed:self];
 }
 
-- (void) parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
     currentElement = elementName;
     if ([elementName isEqualToString:@"location"])
         if ([attributeDict count] > 0) {
@@ -74,7 +82,7 @@
     [self parseTime: elementName attributeDict: attributeDict];
 }
 
-- (void) parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
     currentElement = nil;
     if ([elementName isEqualToString:@"time"]) {
         [self.forecast.times addObject:tempTime];
@@ -82,7 +90,7 @@
     }
 }
 
-- (void) parseTime: (NSString*) elementName attributeDict: (NSDictionary*) attributeDict {
+- (void)parseTime:(NSString *)elementName attributeDict:(NSDictionary *)attributeDict {
     if ([elementName isEqualToString:@"time"]) {
         tempTime = [[[Time alloc] init] autorelease];
         tempTime.from = attributeDict[@"from"];
@@ -103,13 +111,14 @@
     if ([elementName isEqualToString:@"humidity"])
         tempTime.humidity = [NSNumber numberWithInteger:[attributeDict[@"value"] integerValue]];
     
-    if ([elementName isEqualToString:@"symbol"]) if ([attributeDict count] > 0) {
-        tempTime.type = attributeDict[@"name"];
-        tempTime.icon = attributeDict[@"var"];
-    }
+    if ([elementName isEqualToString:@"symbol"])
+        if ([attributeDict count] > 0) {
+            tempTime.type = attributeDict[@"name"];
+            tempTime.icon = attributeDict[@"var"];
+        }
 }
 
-- (void) parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
+- (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
     if ([currentElement isEqualToString:@"name"])
         self.city = string;
     if ([currentElement isEqualToString:@"country"])

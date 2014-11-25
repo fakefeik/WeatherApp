@@ -12,7 +12,7 @@
 
 @protocol WeatherDelegate <NSObject>
 
-- (void) didWeatherLoadSucceed: (Weather*) loadedContent;
-- (void) didWeatherLoadFail: (NSError*) error;
+- (void)didWeatherLoadSucceed:(Weather *)loadedContent;
+- (void)didWeatherLoadFail:(NSError *)error;
 
 @end

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		840AD7741A1C66F200627B36 /* ForecastTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 840AD7731A1C66F200627B36 /* ForecastTableCell.xib */; };
+		840AD7771A1C687A00627B36 /* ForecastTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 840AD7761A1C687A00627B36 /* ForecastTableViewCell.m */; };
 		8446C64C1A1A1A8100A11CD1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8446C64B1A1A1A8100A11CD1 /* main.m */; };
 		8446C64F1A1A1A8100A11CD1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8446C64E1A1A1A8100A11CD1 /* AppDelegate.m */; };
 		8446C6551A1A1A8100A11CD1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8446C6531A1A1A8100A11CD1 /* Main.storyboard */; };
@@ -22,6 +24,7 @@
 		8446C6831A1A1C8D00A11CD1 /* Time.m in Sources */ = {isa = PBXBuildFile; fileRef = 8446C6821A1A1C8D00A11CD1 /* Time.m */; };
 		8446C6861A1A1CA100A11CD1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8446C6851A1A1CA100A11CD1 /* ViewController.m */; };
 		8446C6891A1A1CB800A11CD1 /* Weather.m in Sources */ = {isa = PBXBuildFile; fileRef = 8446C6881A1A1CB800A11CD1 /* Weather.m */; };
+		847961891A24A9AF00B3AC1A /* URLConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 847961881A24A9AF00B3AC1A /* URLConnection.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		840AD7731A1C66F200627B36 /* ForecastTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForecastTableCell.xib; sourceTree = "<group>"; };
+		840AD7751A1C687A00627B36 /* ForecastTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForecastTableViewCell.h; sourceTree = "<group>"; };
+		840AD7761A1C687A00627B36 /* ForecastTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForecastTableViewCell.m; sourceTree = "<group>"; };
 		8446C6461A1A1A8100A11CD1 /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8446C64A1A1A1A8100A11CD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8446C64B1A1A1A8100A11CD1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -63,6 +69,9 @@
 		8446C6871A1A1CB800A11CD1 /* Weather.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Weather.h; sourceTree = "<group>"; };
 		8446C6881A1A1CB800A11CD1 /* Weather.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Weather.m; sourceTree = "<group>"; };
 		8446C68A1A1A1CCA00A11CD1 /* WeatherDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherDelegate.h; sourceTree = "<group>"; };
+		847961871A24A9AF00B3AC1A /* URLConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLConnection.h; sourceTree = "<group>"; };
+		847961881A24A9AF00B3AC1A /* URLConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLConnection.m; sourceTree = "<group>"; };
+		8479618A1A24B27C00B3AC1A /* URLConnectionDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URLConnectionDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +136,12 @@
 				8446C6871A1A1CB800A11CD1 /* Weather.h */,
 				8446C6881A1A1CB800A11CD1 /* Weather.m */,
 				8446C68A1A1A1CCA00A11CD1 /* WeatherDelegate.h */,
+				840AD7731A1C66F200627B36 /* ForecastTableCell.xib */,
+				840AD7751A1C687A00627B36 /* ForecastTableViewCell.h */,
+				840AD7761A1C687A00627B36 /* ForecastTableViewCell.m */,
+				847961871A24A9AF00B3AC1A /* URLConnection.h */,
+				847961881A24A9AF00B3AC1A /* URLConnection.m */,
+				8479618A1A24B27C00B3AC1A /* URLConnectionDelegate.h */,
 			);
 			path = WeatherApp;
 			sourceTree = "<group>";
@@ -242,6 +257,7 @@
 				8446C6781A1A1C2B00A11CD1 /* ForecastTimeView.xib in Resources */,
 				8446C6571A1A1A8100A11CD1 /* Images.xcassets in Resources */,
 				8446C67D1A1A1C5900A11CD1 /* ForecastView.xib in Resources */,
+				840AD7741A1C66F200627B36 /* ForecastTableCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8446C6891A1A1CB800A11CD1 /* Weather.m in Sources */,
+				847961891A24A9AF00B3AC1A /* URLConnection.m in Sources */,
 				8446C6831A1A1C8D00A11CD1 /* Time.m in Sources */,
 				8446C6751A1A1C0300A11CD1 /* ForecastTimeViewController.m in Sources */,
 				8446C6861A1A1CA100A11CD1 /* ViewController.m in Sources */,
@@ -267,6 +284,7 @@
 				8446C6801A1A1C7200A11CD1 /* NavigationViewController.m in Sources */,
 				8446C6711A1A1BD000A11CD1 /* Forecast.m in Sources */,
 				8446C64F1A1A1A8100A11CD1 /* AppDelegate.m in Sources */,
+				840AD7771A1C687A00627B36 /* ForecastTableViewCell.m in Sources */,
 				8446C64C1A1A1A8100A11CD1 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
