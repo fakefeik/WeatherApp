@@ -9,8 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "URLConnectionDelegate.h"
 
-@interface URLConnection : NSObject <NSURLConnectionDelegate, NSURLConnectionDataDelegate>
+@interface URLConnection : NSOperation <NSURLConnectionDelegate, NSURLConnectionDataDelegate>
 
-- (void)getData:(NSURL *)url target:(id<URLConnectionDelegate>)target;
+- (id)initWithUrl:(NSURL *)url target:(id<URLConnectionDelegate>)target;
 
 @end

@@ -50,10 +50,8 @@
     NSDictionary *attrsDictionary = [NSDictionary dictionaryWithObject:[UIColor blackColor] forKey:NSForegroundColorAttributeName];
     NSAttributedString *attributedTitle = [[NSAttributedString alloc] initWithString:title attributes:attrsDictionary];
     refreshControl.attributedTitle = attributedTitle;
-    URLConnection *connection = [[[URLConnection alloc] init] autorelease];
-    [connection getData:[NSURL URLWithString:@"http://api.openweathermap.org/data/2.5/forecast?q=Yekaterinburg&mode=xml"] target:self];
-    
-    
+    URLConnection *connection = [[[URLConnection alloc] initWithUrl:[NSURL URLWithString:@"http://api.openweathermap.org/data/2.5/forecast?q=Yekaterinburg&mode=xml"] target:self] autorelease];
+    [[NSOperationQueue mainQueue] addOperation:connection];
 }
 
 #pragma mark - WeatherDelegate
@@ -63,6 +61,7 @@
     [weather retain];
     [_tableView reloadData];
     lastUpdated = [NSDate date];
+    [lastUpdated retain];
 }
 
 - (void)didWeatherLoadFail:(NSError *)error {
@@ -73,7 +72,7 @@
 
 - (void)didUrlLoadSucceed:(NSMutableData *)loadedContent {
     [refreshControl endRefreshing];
-    [[[[WeatherParser alloc] init] autorelease] loadFromData:self.data target:self];
+    [[[[WeatherParser alloc] init] autorelease] loadFromData:loadedContent target:self];
 }
 
 - (void)didUrlLoadFail:(NSError *)error {

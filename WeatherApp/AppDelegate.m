@@ -19,8 +19,8 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    URLConnection *connection = [[[URLConnection alloc] init] autorelease];
-    [connection getData:[NSURL URLWithString:@"http://api.openweathermap.org/data/2.5/forecast?q=Yekaterinburg&mode=xml"] target:self];
+    URLConnection *connection = [[[URLConnection alloc] initWithUrl:[NSURL URLWithString:@"http://api.openweathermap.org/data/2.5/forecast?q=Yekaterinburg&mode=xml"] target:self] autorelease];
+    [[NSOperationQueue mainQueue] addOperation:connection];
     return YES;
 }
 
