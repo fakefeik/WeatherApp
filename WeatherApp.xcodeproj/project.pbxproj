@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		840AD7741A1C66F200627B36 /* ForecastTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 840AD7731A1C66F200627B36 /* ForecastTableCell.xib */; };
 		840AD7771A1C687A00627B36 /* ForecastTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 840AD7761A1C687A00627B36 /* ForecastTableViewCell.m */; };
+		842211B01A37393F007E68AB /* forecast.xml in Resources */ = {isa = PBXBuildFile; fileRef = 842211AF1A37393F007E68AB /* forecast.xml */; };
+		842211B31A373B9D007E68AB /* WeatherParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 842211B21A373B9D007E68AB /* WeatherParser.m */; };
 		8446C64C1A1A1A8100A11CD1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8446C64B1A1A1A8100A11CD1 /* main.m */; };
 		8446C64F1A1A1A8100A11CD1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8446C64E1A1A1A8100A11CD1 /* AppDelegate.m */; };
 		8446C6551A1A1A8100A11CD1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8446C6531A1A1A8100A11CD1 /* Main.storyboard */; };
@@ -16,13 +18,12 @@
 		8446C65A1A1A1A8100A11CD1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8446C6581A1A1A8100A11CD1 /* LaunchScreen.xib */; };
 		8446C6661A1A1A8100A11CD1 /* WeatherAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8446C6651A1A1A8100A11CD1 /* WeatherAppTests.m */; };
 		8446C6711A1A1BD000A11CD1 /* Forecast.m in Sources */ = {isa = PBXBuildFile; fileRef = 8446C6701A1A1BD000A11CD1 /* Forecast.m */; };
-		8446C6751A1A1C0300A11CD1 /* ForecastTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8446C6731A1A1C0300A11CD1 /* ForecastTimeViewController.m */; };
-		8446C6781A1A1C2B00A11CD1 /* ForecastTimeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8446C6771A1A1C2B00A11CD1 /* ForecastTimeView.xib */; };
+		8446C6751A1A1C0300A11CD1 /* TimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8446C6731A1A1C0300A11CD1 /* TimeViewController.m */; };
+		8446C6781A1A1C2B00A11CD1 /* TimeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8446C6771A1A1C2B00A11CD1 /* TimeView.xib */; };
 		8446C67B1A1A1C4600A11CD1 /* ForecastViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8446C67A1A1A1C4600A11CD1 /* ForecastViewController.m */; };
 		8446C67D1A1A1C5900A11CD1 /* ForecastView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8446C67C1A1A1C5900A11CD1 /* ForecastView.xib */; };
 		8446C6801A1A1C7200A11CD1 /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8446C67F1A1A1C7200A11CD1 /* NavigationViewController.m */; };
 		8446C6831A1A1C8D00A11CD1 /* Time.m in Sources */ = {isa = PBXBuildFile; fileRef = 8446C6821A1A1C8D00A11CD1 /* Time.m */; };
-		8446C6861A1A1CA100A11CD1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8446C6851A1A1CA100A11CD1 /* ViewController.m */; };
 		8446C6891A1A1CB800A11CD1 /* Weather.m in Sources */ = {isa = PBXBuildFile; fileRef = 8446C6881A1A1CB800A11CD1 /* Weather.m */; };
 		847961891A24A9AF00B3AC1A /* URLConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 847961881A24A9AF00B3AC1A /* URLConnection.m */; };
 /* End PBXBuildFile section */
@@ -41,6 +42,9 @@
 		840AD7731A1C66F200627B36 /* ForecastTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForecastTableCell.xib; sourceTree = "<group>"; };
 		840AD7751A1C687A00627B36 /* ForecastTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForecastTableViewCell.h; sourceTree = "<group>"; };
 		840AD7761A1C687A00627B36 /* ForecastTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForecastTableViewCell.m; sourceTree = "<group>"; };
+		842211AF1A37393F007E68AB /* forecast.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = forecast.xml; sourceTree = "<group>"; };
+		842211B11A373B9D007E68AB /* WeatherParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherParser.h; sourceTree = "<group>"; };
+		842211B21A373B9D007E68AB /* WeatherParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherParser.m; sourceTree = "<group>"; };
 		8446C6461A1A1A8100A11CD1 /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8446C64A1A1A1A8100A11CD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8446C64B1A1A1A8100A11CD1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -54,9 +58,9 @@
 		8446C6651A1A1A8100A11CD1 /* WeatherAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeatherAppTests.m; sourceTree = "<group>"; };
 		8446C66F1A1A1BD000A11CD1 /* Forecast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Forecast.h; sourceTree = "<group>"; };
 		8446C6701A1A1BD000A11CD1 /* Forecast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Forecast.m; sourceTree = "<group>"; };
-		8446C6721A1A1C0300A11CD1 /* ForecastTimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForecastTimeViewController.h; sourceTree = "<group>"; };
-		8446C6731A1A1C0300A11CD1 /* ForecastTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForecastTimeViewController.m; sourceTree = "<group>"; };
-		8446C6771A1A1C2B00A11CD1 /* ForecastTimeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForecastTimeView.xib; sourceTree = "<group>"; };
+		8446C6721A1A1C0300A11CD1 /* TimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeViewController.h; sourceTree = "<group>"; };
+		8446C6731A1A1C0300A11CD1 /* TimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeViewController.m; sourceTree = "<group>"; };
+		8446C6771A1A1C2B00A11CD1 /* TimeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimeView.xib; sourceTree = "<group>"; };
 		8446C6791A1A1C4600A11CD1 /* ForecastViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForecastViewController.h; sourceTree = "<group>"; };
 		8446C67A1A1A1C4600A11CD1 /* ForecastViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForecastViewController.m; sourceTree = "<group>"; };
 		8446C67C1A1A1C5900A11CD1 /* ForecastView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForecastView.xib; sourceTree = "<group>"; };
@@ -64,8 +68,6 @@
 		8446C67F1A1A1C7200A11CD1 /* NavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationViewController.m; sourceTree = "<group>"; };
 		8446C6811A1A1C8D00A11CD1 /* Time.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Time.h; sourceTree = "<group>"; };
 		8446C6821A1A1C8D00A11CD1 /* Time.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Time.m; sourceTree = "<group>"; };
-		8446C6841A1A1CA100A11CD1 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		8446C6851A1A1CA100A11CD1 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		8446C6871A1A1CB800A11CD1 /* Weather.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Weather.h; sourceTree = "<group>"; };
 		8446C6881A1A1CB800A11CD1 /* Weather.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Weather.m; sourceTree = "<group>"; };
 		8446C68A1A1A1CCA00A11CD1 /* WeatherDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherDelegate.h; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 		8446C6481A1A1A8100A11CD1 /* WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
+				842211AF1A37393F007E68AB /* forecast.xml */,
 				8446C64D1A1A1A8100A11CD1 /* AppDelegate.h */,
 				8446C64E1A1A1A8100A11CD1 /* AppDelegate.m */,
 				8446C6531A1A1A8100A11CD1 /* Main.storyboard */,
@@ -121,9 +124,9 @@
 				8446C6491A1A1A8100A11CD1 /* Supporting Files */,
 				8446C66F1A1A1BD000A11CD1 /* Forecast.h */,
 				8446C6701A1A1BD000A11CD1 /* Forecast.m */,
-				8446C6721A1A1C0300A11CD1 /* ForecastTimeViewController.h */,
-				8446C6731A1A1C0300A11CD1 /* ForecastTimeViewController.m */,
-				8446C6771A1A1C2B00A11CD1 /* ForecastTimeView.xib */,
+				8446C6721A1A1C0300A11CD1 /* TimeViewController.h */,
+				8446C6731A1A1C0300A11CD1 /* TimeViewController.m */,
+				8446C6771A1A1C2B00A11CD1 /* TimeView.xib */,
 				8446C6791A1A1C4600A11CD1 /* ForecastViewController.h */,
 				8446C67A1A1A1C4600A11CD1 /* ForecastViewController.m */,
 				8446C67C1A1A1C5900A11CD1 /* ForecastView.xib */,
@@ -131,8 +134,6 @@
 				8446C67F1A1A1C7200A11CD1 /* NavigationViewController.m */,
 				8446C6811A1A1C8D00A11CD1 /* Time.h */,
 				8446C6821A1A1C8D00A11CD1 /* Time.m */,
-				8446C6841A1A1CA100A11CD1 /* ViewController.h */,
-				8446C6851A1A1CA100A11CD1 /* ViewController.m */,
 				8446C6871A1A1CB800A11CD1 /* Weather.h */,
 				8446C6881A1A1CB800A11CD1 /* Weather.m */,
 				8446C68A1A1A1CCA00A11CD1 /* WeatherDelegate.h */,
@@ -142,6 +143,8 @@
 				847961871A24A9AF00B3AC1A /* URLConnection.h */,
 				847961881A24A9AF00B3AC1A /* URLConnection.m */,
 				8479618A1A24B27C00B3AC1A /* URLConnectionDelegate.h */,
+				842211B11A373B9D007E68AB /* WeatherParser.h */,
+				842211B21A373B9D007E68AB /* WeatherParser.m */,
 			);
 			path = WeatherApp;
 			sourceTree = "<group>";
@@ -253,8 +256,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8446C6551A1A1A8100A11CD1 /* Main.storyboard in Resources */,
+				842211B01A37393F007E68AB /* forecast.xml in Resources */,
 				8446C65A1A1A1A8100A11CD1 /* LaunchScreen.xib in Resources */,
-				8446C6781A1A1C2B00A11CD1 /* ForecastTimeView.xib in Resources */,
+				8446C6781A1A1C2B00A11CD1 /* TimeView.xib in Resources */,
 				8446C6571A1A1A8100A11CD1 /* Images.xcassets in Resources */,
 				8446C67D1A1A1C5900A11CD1 /* ForecastView.xib in Resources */,
 				840AD7741A1C66F200627B36 /* ForecastTableCell.xib in Resources */,
@@ -278,10 +282,10 @@
 				8446C6891A1A1CB800A11CD1 /* Weather.m in Sources */,
 				847961891A24A9AF00B3AC1A /* URLConnection.m in Sources */,
 				8446C6831A1A1C8D00A11CD1 /* Time.m in Sources */,
-				8446C6751A1A1C0300A11CD1 /* ForecastTimeViewController.m in Sources */,
-				8446C6861A1A1CA100A11CD1 /* ViewController.m in Sources */,
+				8446C6751A1A1C0300A11CD1 /* TimeViewController.m in Sources */,
 				8446C67B1A1A1C4600A11CD1 /* ForecastViewController.m in Sources */,
 				8446C6801A1A1C7200A11CD1 /* NavigationViewController.m in Sources */,
+				842211B31A373B9D007E68AB /* WeatherParser.m in Sources */,
 				8446C6711A1A1BD000A11CD1 /* Forecast.m in Sources */,
 				8446C64F1A1A1A8100A11CD1 /* AppDelegate.m in Sources */,
 				840AD7771A1C687A00627B36 /* ForecastTableViewCell.m in Sources */,

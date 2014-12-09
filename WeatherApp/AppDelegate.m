@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "Weather.h"
-#import "ForecastTimeViewController.h"
+#import "TimeViewController.h"
 #import "ForecastViewController.h"
 #import "URLConnection.h"
 
@@ -25,17 +25,23 @@
 }
 
 - (void)didUrlLoadSucceed:(NSMutableData *)loadedContent {
+    [self loadForecastViewControllerWithData:loadedContent];
+}
+
+- (void)didUrlLoadFail:(NSError *)error {
+    NSLog(@"Load from Url failed...");
+    NSLog(@"Loading data from local storage.");
+    [self loadForecastViewControllerWithData:[NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"forecast" ofType:@"xml"]]];
+}
+
+- (void)loadForecastViewControllerWithData:(NSData *)data {
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     ForecastViewController *ctrl = [[[ForecastViewController alloc] initWithNibName:@"ForecastView" bundle:[NSBundle mainBundle]] autorelease];
-    ctrl.data = loadedContent;
+    ctrl.data = data;
     UINavigationController *naviCtrl = [[[UINavigationController alloc] initWithRootViewController:ctrl] autorelease];
     
     self.window.rootViewController = naviCtrl;
     [self.window makeKeyAndVisible];
-}
-
-- (void)didUrlLoadFail:(NSError *)error {
-    NSLog(@"FAILED!");
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

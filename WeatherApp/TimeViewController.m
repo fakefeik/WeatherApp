@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Admin. All rights reserved.
 //
 
-#import "ForecastTimeViewController.h"
+#import "TimeViewController.h"
 #import "Forecast.h"
 #import "Time.h"
 #import "Weather.h"

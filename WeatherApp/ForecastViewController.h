@@ -11,7 +11,7 @@
 #import "URLConnectionDelegate.h"
 #import "ForecastTableViewCell.h"
 
-@interface ForecastViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, WeatherDelegate>
+@interface ForecastViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, WeatherDelegate, URLConnectionDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (assign, nonatomic) IBOutlet ForecastTableViewCell *tableViewCell;

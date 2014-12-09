@@ -7,8 +7,9 @@
 //
 
 #import "ForecastViewController.h"
-#import "ForecastTimeViewController.h"
+#import "TimeViewController.h"
 #import "Weather.h"
+#import "WeatherParser.h"
 #import "URLConnection.h"
 
 @interface ForecastViewController ()
@@ -17,6 +18,8 @@
 
 @implementation ForecastViewController {
     Weather *weather;
+    UIRefreshControl *refreshControl;
+    NSDate *lastUpdated;
 }
 
 @synthesize tableView = _tableView;
@@ -26,13 +29,31 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     static NSString *identifier = @"ForecastTableCell";
-    [[[[Weather alloc] init] autorelease] loadFromData:self.data target:self];
+    [[[[WeatherParser alloc] init] autorelease] loadFromData:self.data target:self];
     UINib *cellNib = [UINib nibWithNibName:@"ForecastTableCell" bundle:[NSBundle mainBundle]];
     [self.tableView registerNib:cellNib forCellReuseIdentifier:identifier];
+    refreshControl = [[UIRefreshControl alloc] init];
+    [refreshControl addTarget:self action:@selector(updateTable) forControlEvents:UIControlEventValueChanged];
+    [_tableView addSubview:refreshControl];
+    lastUpdated = [NSDate date];
+    [lastUpdated retain];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+}
+
+- (void)updateTable {
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"MMM d, h:mm a"];
+    NSString *title = [NSString stringWithFormat:@"Last updated: %@", [formatter stringFromDate:lastUpdated]];
+    NSDictionary *attrsDictionary = [NSDictionary dictionaryWithObject:[UIColor blackColor] forKey:NSForegroundColorAttributeName];
+    NSAttributedString *attributedTitle = [[NSAttributedString alloc] initWithString:title attributes:attrsDictionary];
+    refreshControl.attributedTitle = attributedTitle;
+    URLConnection *connection = [[[URLConnection alloc] init] autorelease];
+    [connection getData:[NSURL URLWithString:@"http://api.openweathermap.org/data/2.5/forecast?q=Yekaterinburg&mode=xml"] target:self];
+    
+    
 }
 
 #pragma mark - WeatherDelegate
@@ -40,10 +61,25 @@
 - (void)didWeatherLoadSucceed:(Weather *)loadedContent {
     weather = loadedContent;
     [weather retain];
+    [_tableView reloadData];
+    lastUpdated = [NSDate date];
 }
 
 - (void)didWeatherLoadFail:(NSError *)error {
     NSLog(@"FAILED!");
+}
+
+#pragma mark - URLConnectionDelegate
+
+- (void)didUrlLoadSucceed:(NSMutableData *)loadedContent {
+    [refreshControl endRefreshing];
+    [[[[WeatherParser alloc] init] autorelease] loadFromData:self.data target:self];
+}
+
+- (void)didUrlLoadFail:(NSError *)error {
+    [refreshControl endRefreshing];
+    UIAlertView *message = [[[UIAlertView alloc] initWithTitle:@"Lost with sauce" message:@"Are you even connected to the Internet?" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] autorelease];
+    [message show];
 }
 
 #pragma mark - UITableViewDelegate

@@ -10,7 +10,7 @@
 #import "Forecast.h"
 #import "WeatherDelegate.h"
 
-@interface Weather : NSObject <NSXMLParserDelegate> {
+@interface Weather : NSObject {
     @private
     NSString *city;
     NSString *country;
@@ -19,16 +19,11 @@
     Forecast *forecast;
 }
 
-- (void)loadFromFile:(NSString *)filename target:(id<WeatherDelegate>)target;
-- (void)loadFromNet:(NSURL *)url target:(id<WeatherDelegate>)target;
-- (void)loadFromData:(NSData *)data target:(id<WeatherDelegate>)target;
-
 @property (copy) NSString *city;
 @property (copy) NSString *country;
 @property (retain) NSNumber *latitude;
 @property (retain) NSNumber *longitude;
 @property (retain) Forecast *forecast;
-@property (retain) id<WeatherDelegate> weatherDelegate;
 @property (copy) NSString *sunRise;
 @property (copy) NSString *sunSet;
 
